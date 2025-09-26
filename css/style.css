@@ -45,6 +45,7 @@ input {
 nav {
   background-color: var(--fg);
   bottom: 0;
+  color: var(--bg);
   display: flex;
   gap: 1rem;
   padding: 1rem;
@@ -52,6 +53,11 @@ nav {
 
   a {
     color: var(--bg);
+  }
+
+  span.filename {
+    flex-grow: 1;
+    text-align: right;
   }
 }
 
