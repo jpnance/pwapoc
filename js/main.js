@@ -5,6 +5,8 @@ window.onload = () => {
     navigator.serviceWorker.register('sw.js');
   }
 
+  window.scrollTo(0, document.body.scrollHeight);
+
   document.addEventListener('keydown', handleKeyPress);
 
   const fileInput = document.querySelector('input');
@@ -73,6 +75,8 @@ window.onload = () => {
 };
 
 function handleKeyPress(e) {
+  window.scrollTo(0, document.body.scrollHeight);
+
   e.preventDefault();
 
   const input = document.querySelector('pre.input');
