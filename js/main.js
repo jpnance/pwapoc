@@ -7,6 +7,8 @@ window.onload = () => {
 
   scrollToEnd();
 
+  loadFromLocalStorage();
+
   document.addEventListener('keydown', handleKeyPress);
 
   const fileInput = document.querySelector('input');
@@ -47,6 +49,8 @@ window.onload = () => {
     input.innerText = '';
 
     filename.innerText = '';
+
+    saveToLocalStorage();
   });
 
   const loadAction = document.querySelector('#load-action');
@@ -129,6 +133,8 @@ function handleKeyPress(e) {
       break;
   }
 
+  saveToLocalStorage();
+
   const cursor = document.querySelector('pre.cursor');
 
   cursor.classList.remove('blink');
@@ -138,4 +144,21 @@ function handleKeyPress(e) {
 
 function scrollToEnd() {
   window.scrollTo(0, document.body.scrollHeight);
+}
+
+function loadFromLocalStorage() {
+  const input = document.querySelector('pre.input');
+  const filename = document.querySelector('span.filename');
+
+  filename.innerText = localStorage.getItem('filename') || '';
+
+  input.innerText = localStorage.getItem('input') || '';
+}
+
+function saveToLocalStorage() {
+  const input = document.querySelector('pre.input');
+  const filename = document.querySelector('span.filename');
+
+  localStorage.setItem('filename', filename.innerText || '');
+  localStorage.setItem('input', input.innerText || '');
 }
