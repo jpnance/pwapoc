@@ -13,6 +13,12 @@
   --font: "Victor Mono";
 }
 
+.gb-theme {
+  --bg: rgb(123, 130, 16);
+  --fg: rgb(41, 65, 57);
+  --font: "F5x7 Dot matrix Character LCD font";
+}
+
 body,
 pre {
   font-family: var(--font);
