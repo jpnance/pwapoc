@@ -76,6 +76,16 @@ window.onload = () => {
     link.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(input.innerText));
     link.click();
   });
+
+  const copyAction = document.querySelector('#copy-action');
+
+  copyAction.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    const input = document.querySelector('pre.input');
+
+    navigator.clipboard.writeText(input.innerText);
+  });
 };
 
 function handleKeyPress(e) {
