@@ -13,28 +13,6 @@ window.onload = () => {
 
   const fileInput = document.querySelector('input');
 
-  let loadedFilename = '';
-
-  fileInput.addEventListener('change', () => {
-    const file = fileInput.files[0];
-    const reader = new FileReader();
-
-    const input = document.querySelector('pre.input');
-    const filename = document.querySelector('span.filename');
-
-    reader.addEventListener('load', () => {
-      loadedFilename = file.name;
-
-      filename.innerText = loadedFilename;
-
-      input.innerText = reader.result;
-    });
-
-    if (file) {
-      reader.readAsText(file);
-    }
-  });
-
   const newAction = document.querySelector('#new-action');
 
   newAction.addEventListener('click', (event) => {
@@ -42,39 +20,10 @@ window.onload = () => {
     event.stopPropagation();
 
     const input = document.querySelector('pre.input');
-    const filename = document.querySelector('span.filename');
-
-    loadedFilename = '';
 
     input.innerText = '';
 
-    filename.innerText = '';
-
     saveToLocalStorage();
-  });
-
-  const loadAction = document.querySelector('#load-action');
-
-  loadAction.addEventListener('click', (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-
-    fileInput.click();
-  });
-
-  const saveAction = document.querySelector('#save-action');
-
-  saveAction.addEventListener('click', (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-
-    const input = document.querySelector('pre.input');
-
-    const link = document.createElement('a');
-
-    link.setAttribute('download', loadedFilename || `${currentTimestamp()}.txt`);
-    link.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(input.innerText));
-    link.click();
   });
 
   const copyAction = document.querySelector('#copy-action');
@@ -158,18 +107,13 @@ function scrollToEnd() {
 
 function loadFromLocalStorage() {
   const input = document.querySelector('pre.input');
-  const filename = document.querySelector('span.filename');
-
-  filename.innerText = localStorage.getItem('filename') || '';
 
   input.innerText = localStorage.getItem('input') || '';
 }
 
 function saveToLocalStorage() {
   const input = document.querySelector('pre.input');
-  const filename = document.querySelector('span.filename');
 
-  localStorage.setItem('filename', filename.innerText || '');
   localStorage.setItem('input', input.innerText || '');
 }
 

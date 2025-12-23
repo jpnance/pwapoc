@@ -47,19 +47,25 @@ html,
   width: calc(100% - 2 * 1rem);
 }
 
+.footer {
+  background-color: var(--fg);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+}
+
 input {
   display: none;
 }
 
 nav {
-  background-color: var(--fg);
-  bottom: 0;
   color: var(--bg);
   display: flex;
+  flex-grow: 1;
   gap: 2rem;
-  justify-content: center;
+  max-width: 1000px;
   padding: 1rem;
-  position: sticky;
 
   a {
     color: var(--bg);
@@ -68,7 +74,6 @@ nav {
   }
 
   span.filename {
-    flex-grow: 1;
     text-align: right;
   }
 }
