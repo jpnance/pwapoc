@@ -9,15 +9,38 @@ html,
   background-color: rgb(185, 215, 0);
   color: rgb(80, 100, 30);
   display: flex;
-  font-family: "F5x7 Dot matrix Character LCD font";
   height: 100%;
-  line-height: 2.5rem;
+  line-height: 1.5rem;
   margin: 0;
-  padding: 0;
   width: 100%;
 }
 
 .container {
-  margin: auto;
-  text-align: center;
+  padding: 1rem;
+  text-align: left;
+}
+
+pre {
+  font-family: "F5x7 Dot matrix Character LCD font";
+}
+
+.input,
+.cursor {
+  display: inline;
+  font-size: 1rem;
+  white-space: pre-wrap;
+}
+
+.blink {
+  animation: 1s blink infinite 0.5s;
+}
+
+@keyframes blink {
+  from, to {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
