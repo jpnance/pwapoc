@@ -1,6 +1,6 @@
 {
-  "name": "Hello, World!",
-  "short_name": "Hello",
+  "name": "ProWriterAlpha",
+  "short_name": "PWA",
   "icons": [{
     "src": "images/hello-icon-128.png",
       "sizes": "128x128",
@@ -35,6 +35,6 @@
   "lang": "en-US",
   "start_url": "/index.html",
   "display": "fullscreen",
-  "background_color": "white",
-  "theme_color": "white"
+  "background_color": "rgb(123 130 16)",
+  "theme_color": "rgb(41 65 57)"
 }
