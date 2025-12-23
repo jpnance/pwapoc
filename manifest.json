@@ -34,7 +34,5 @@
   ],
   "lang": "en-US",
   "start_url": "/index.html",
-  "display": "fullscreen",
-  "background_color": "rgb(123 130 16)",
-  "theme_color": "rgb(41 65 57)"
+  "display": "fullscreen"
 }
