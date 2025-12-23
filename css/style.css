@@ -1,4 +1,5 @@
 @import url(https://db.onlinewebfonts.com/c/dd053b079ba96b177b08e16b81b3ae1f?family=F5x7+Dot+matrix+Character+LCD+font);
+@import url('https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 .lcd-theme {
   --bg: rgb(155, 185, 0);
