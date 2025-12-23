@@ -9,19 +9,42 @@ window.onload = () => {
 
   const fileInput = document.querySelector('input');
 
+  let loadedFilename = '';
+
   fileInput.addEventListener('change', () => {
     const file = fileInput.files[0];
     const reader = new FileReader();
 
     const input = document.querySelector('pre.input');
+    const filename = document.querySelector('span.filename');
 
     reader.addEventListener('load', () => {
+      loadedFilename = file.name;
+
+      filename.innerText = loadedFilename;
+
       input.innerText = reader.result;
     });
 
     if (file) {
       reader.readAsText(file);
     }
+  });
+
+  const newAction = document.querySelector('#new-action');
+
+  newAction.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const input = document.querySelector('pre.input');
+    const filename = document.querySelector('span.filename');
+
+    loadedFilename = '';
+
+    input.innerText = '';
+
+    filename.innerText = '';
   });
 
   const loadAction = document.querySelector('#load-action');
@@ -43,7 +66,7 @@ window.onload = () => {
 
     const link = document.createElement('a');
 
-    link.setAttribute('download', '');
+    link.setAttribute('download', loadedFilename);
     link.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(input.innerText));
     link.click();
   });
