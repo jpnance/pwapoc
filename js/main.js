@@ -32,6 +32,21 @@ window.onload = () => {
 
     fileInput.click();
   });
+
+  const saveAction = document.querySelector('#save-action');
+
+  saveAction.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const input = document.querySelector('pre.input');
+
+    const link = document.createElement('a');
+
+    link.setAttribute('download', '');
+    link.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(input.innerText));
+    link.click();
+  });
 };
 
 function handleKeyPress(e) {
