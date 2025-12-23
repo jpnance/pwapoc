@@ -72,7 +72,7 @@ window.onload = () => {
 
     const link = document.createElement('a');
 
-    link.setAttribute('download', loadedFilename);
+    link.setAttribute('download', loadedFilename || `${currentTimestamp()}.txt`);
     link.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(input.innerText));
     link.click();
   });
@@ -161,4 +161,13 @@ function saveToLocalStorage() {
 
   localStorage.setItem('filename', filename.innerText || '');
   localStorage.setItem('input', input.innerText || '');
+}
+
+function currentTimestamp() {
+  const date = new Date();
+  const isoString = date.toISOString();
+
+  const timestamp = isoString.substring(0, 19).replace(/[-:T]/g, '');
+
+  return timestamp;
 }
