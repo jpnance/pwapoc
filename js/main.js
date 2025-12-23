@@ -6,6 +6,32 @@ window.onload = () => {
   }
 
   document.addEventListener('keydown', handleKeyPress);
+
+  const fileInput = document.querySelector('input');
+
+  fileInput.addEventListener('change', () => {
+    const file = fileInput.files[0];
+    const reader = new FileReader();
+
+    const input = document.querySelector('pre.input');
+
+    reader.addEventListener('load', () => {
+      input.innerText = reader.result;
+    });
+
+    if (file) {
+      reader.readAsText(file);
+    }
+  });
+
+  const loadAction = document.querySelector('#load-action');
+
+  loadAction.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    fileInput.click();
+  });
 };
 
 function handleKeyPress(e) {
