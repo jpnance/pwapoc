@@ -1,10 +1,15 @@
+@import url(https://db.onlinewebfonts.com/c/dd053b079ba96b177b08e16b81b3ae1f?family=F5x7+Dot+matrix+Character+LCD+font);
+
 body {
   font-family: sans-serif;
 }
 
 html,
 .fullscreen {
+  background-color: rgb(225, 252, 91);
+  color: rgb(60, 60, 10);
   display: flex;
+  font-family: "F5x7 Dot matrix Character LCD font";
   height: 100%;
   margin: 0;
   padding: 0;
