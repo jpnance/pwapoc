@@ -5,7 +5,7 @@ window.onload = () => {
     navigator.serviceWorker.register('sw.js');
   }
 
-  window.scrollTo(0, document.body.scrollHeight);
+  scrollToEnd();
 
   document.addEventListener('keydown', handleKeyPress);
 
@@ -75,9 +75,9 @@ window.onload = () => {
 };
 
 function handleKeyPress(e) {
-  window.scrollTo(0, document.body.scrollHeight);
-
   e.preventDefault();
+
+  scrollToEnd();
 
   const input = document.querySelector('pre.input');
   const currentText = input.innerText;
@@ -134,4 +134,8 @@ function handleKeyPress(e) {
   cursor.classList.remove('blink');
   cursor.clientWidth;
   cursor.classList.add('blink');
+}
+
+function scrollToEnd() {
+  window.scrollTo(0, document.body.scrollHeight);
 }
