@@ -47,19 +47,6 @@ footer {
   }
 }
 
-textarea:focus {
-  border: none;
-  outline: none;
-}
-
-textarea {
-  border: 0;
-  background-color: transparent;
-  height: 100%;
-  resize: none;
-  width: 100%;
-}
-
 .input,
 .cursor {
   display: inline;
