@@ -11,6 +11,7 @@ html,
   display: flex;
   font-family: "F5x7 Dot matrix Character LCD font";
   height: 100%;
+  line-height: 2.5rem;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -19,8 +20,4 @@ html,
 .container {
   margin: auto;
   text-align: center;
-}
-
-.title {
-  font-size: 3rem;
 }
